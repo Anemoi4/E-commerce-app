@@ -9,7 +9,7 @@ const User = require('./models/User')
 const sgMail = require('@sendgrid/mail')
 
 app.use((cors({
-    origin: 'https://magic-keys.netlify.app'
+    origin: '*'
 })))
 
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
