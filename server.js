@@ -24,6 +24,10 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => app.listen(PORT, () => console.log('Connection to DB successfull, listening at port 3000....')))
     .catch(err => console.log(err))
 
+app.get('/', (req, res) => {
+    res.send('Testing...')
+})
+
 app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (req, res) => {
     const payload = req.body
     const sig = req.headers['stripe-signature']
