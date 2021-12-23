@@ -24,7 +24,7 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => app.listen(PORT, () => console.log('Connection to DB successfull, listening at port 3000....')))
     .catch(err => console.log(err))
 
-app.get('/', (req, res) => {
+app.get('/', (req, res)  => {
     res.send('Testing...')
 })
 
