@@ -32,10 +32,25 @@ export default function App() {
         }
     }
     
-    async function handleAddToCart(productId, quantity) {
+    async function handleAddToCart(productId, quantity, e) {
+        // If user doesnt click the image
+        let cartIconBG;
+
+        e.target.matches('.cart-icon') ? cartIconBG = e.target :  cartIconBG = e.target.parentElement
+
+        cartIconBG.style.border = '1px solid hsl(0, 0%, 45%)'
+        cartIconBG.style.background = 'hsl(0, 0%, 45%, .3)';
+
+        setTimeout((e) => {
+            cartIconBG.style.border = '1px solid transparent'
+            cartIconBG.style.background = 'none'
+        }, 400)  
+
         const { cart } = await commerce.cart.add(productId, quantity);
 
         setCart(cart)
+
+
     }
 
     async function handleUpdateCartQty(productId, quantity) {

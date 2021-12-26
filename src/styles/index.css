@@ -5,6 +5,11 @@
     filter: invert(55%) sepia(0%) saturate(0%) hue-rotate(156deg) brightness(92%) contrast(85%);
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 .filter-dark-gray {
     filter: invert(14%) sepia(9%) saturate(0%) hue-rotate(182deg) brightness(92%) contrast(82%);
 }
@@ -184,8 +189,7 @@ a {
     display: block;
     width: 90%;
     margin: 0 auto;
-    max-height: 220px;
-    padding-top: .5rem;
+    max-height: 200px;
 }
 
 .product-container .product-top-section{
@@ -202,7 +206,7 @@ a {
 }
 
 .product-container .product-bottom-section .product-left,
-.product-container .product-bottom-section .product-right { 
+.product-container .product-bottom-section .product-right {
     padding: .5rem;
 }
 
@@ -228,10 +232,17 @@ a {
 }
 
 .product-container .product-bottom-section .product-right button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:relative;
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
 }
 
 .main-nav {
@@ -242,6 +253,18 @@ a {
     padding: 0 1rem;
     height: var(--nav-bar-height);
     border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.cart-action {
+    position: absolute;
+    width: max-content;
+    top: -90%;
+    background: #333;
+    color: white;
+    padding: .25rem  .5rem;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 100ms ease-out;
 }
 
 .main-nav .brand-logo {
@@ -378,12 +401,36 @@ a {
 }
 
 .checkout-container {
-    max-width: 600px;
+    max-width: 500px;
+    min-width: 250px;
     margin: 4rem auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .checkout-container {
+        margin: .5rem;
+    }
+
+    form .input-row {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .input-group {
+        margin: 1rem;
+    }
+
+    .input-group input {
+        width: 100%;
+    }
+
+    .container {
+        padding: 0;
+    }
+}
+
 /* Progress bar */
-.progressbar {
+.progressbar { 
     position: relative;
     left: 50%;
     transform: translateX(-47%);
@@ -453,8 +500,7 @@ a {
 .form-submit {
     display: flex;
     justify-content: space-between;
-    margin: 2rem;
-    padding: 0 2rem 2rem 2rem;
+    padding: 2rem 1.5rem;
 }
 
 form button {
