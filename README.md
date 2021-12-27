@@ -9,3 +9,4 @@ The project is hosted on netlify: _<a href="https://magic-keys.netlify.app/" tar
 * Use 4242 4242 4242 4242 as a card to test out the shop
 * Application uses webhook to send email after purchase to the shop owner and customer
 * Uses MongoDB to store customer info for short period of time
+* Servers code can be seen in the server brach
