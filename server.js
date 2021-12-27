@@ -84,7 +84,7 @@ app.post('/webhook', bodyParser.raw({type: 'application/json'}), async (req, res
 
     res.status(200)
 })
-
+  
 // Stripe body must be recieved raw
 app.use(express.json()) 
 
